@@ -33,4 +33,6 @@
 - Simple APIs
 - API Setup
 
-![cheatsheet](cheatsheet.pdf)
+![cheatsheet](sheet_1.png)
+![sheet](sheet_2.png)
+[Cheat Sheet em PDF](cheatsheet.pdf)
