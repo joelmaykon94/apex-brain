@@ -1,9 +1,7 @@
-FROM centos:centos8
+FROM nginx
 LABEL maintainer="joelmaykon94@gmail.com"
 
 # Install NGINX
-RUN dnf -y update
-RUN dnf -y install nginx
 
 # Add default configuration
 COPY conf/jenkins.conf /etc/nginx/conf.d/jenkins.conf
