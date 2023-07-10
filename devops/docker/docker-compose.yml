@@ -1,16 +1,20 @@
 version: '3'
 services:
+  jenkins:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+      - 50000:50000
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
+    restart: unless-stopped
+
   nginx:
     image: nginx
     ports:
-      - '80:80'
+      - 80:80
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
-    depends_on:
-      - jenkins
-  jenkins:
-    image: jenkins/jenkins:lts
-    ports:
-      - '8080:8080'
-    volumes:
-      - ./jenkins_home:/var/jenkins_home
+    restart: unless-stopped
