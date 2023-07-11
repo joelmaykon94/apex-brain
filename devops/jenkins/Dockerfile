@@ -24,6 +24,8 @@ RUN apt-get update \
 
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
 
-RUN /usr/local/bin/install-plugins.sh /usr/share/jenkins/ref/plugins.txt
+RUN ["chmod", "+x", "/usr/local/bin/install-plugins.sh"]
+
+RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
 
 USER jenkins
