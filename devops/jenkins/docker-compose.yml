@@ -12,9 +12,6 @@ services:
       - 50000:50000
     container_name: jenkins-master
     volumes:
-      - ./ssh/config:/root/.ssh/config
-      - ./ssh/grafana-dash.pem:/root/.ssh/grafana-dash.pem
-      - ./ssh/id_ed25519
       - jenkins-storage:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
