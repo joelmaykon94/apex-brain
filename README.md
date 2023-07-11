@@ -12,14 +12,8 @@ My repository save my knowledge throughout my career as I developed various soft
 ## Devops Engineer
 ### Tecnologies
 ### Docker
-  - Create containers web server NGINX and Automation with Jenkins.
+  - Jenkins
 ### Kubernetes
-- Create Database Mongo DB.
-- Create the server Nginx.
-- Create app web with React.JS.
-- Create Ingress to access Nginx for the web.
-### Web Servers
-- Create the configuration web server Nginx
 
 ## Development Web (Front End)
 - Create the portifolio using React.JS and Three.JS
