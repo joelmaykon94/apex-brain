@@ -16,11 +16,10 @@ services:
       - 8080:8080
     volumes:
       - jenkins_home:/var/jenkins_home
+networks:
+  network1:
+    name: jenkins_nginx
+    external: true
 
 volumes:
   jenkins_home:
-
-networks:
-  default:
-    # Use a custom driver
-    driver: jenkins
