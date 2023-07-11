@@ -1,14 +1,13 @@
-version: '3'
-
+version: "3"
 services:
-  nginx:
+  nginx-jarvis:
     image: nginx:latest
+    container_name: nginx-jarvis
     ports:
       - 80:80
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
-    depends_on:
-      - jenkins
+      - ./proxy.conf:/etc/nginx/conf.d/default.conf
 
   jenkins:
     image: jenkins/jenkins:lts
@@ -16,10 +15,6 @@ services:
       - 8080:8080
     volumes:
       - jenkins_home:/var/jenkins_home
-networks:
-  network1:
-    name: jenkins_nginx
-    external: true
 
 volumes:
   jenkins_home:
