@@ -19,3 +19,8 @@ services:
 
 volumes:
   jenkins_home:
+
+networks:
+  default:
+    # Use a custom driver
+    driver: jenkins
