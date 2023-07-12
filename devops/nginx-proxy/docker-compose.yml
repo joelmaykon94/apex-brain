@@ -8,3 +8,5 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
       - ./proxy.conf:/etc/nginx/conf.d/default.conf
+    extra_hosts:
+      - "jenkins:129.213.22.70"
