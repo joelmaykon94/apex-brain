@@ -7,5 +7,5 @@ services:
       - 80:80
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
-      - ./proxy.conf:/etc/nginx/conf.d/default.conf
-      - ./index.html:/var/www/html/index.html
+      #- ./proxy.conf:/etc/nginx/conf.d/default.conf
+      #- ./index.html:/var/www/html/index.html
