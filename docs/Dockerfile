@@ -11,4 +11,6 @@ RUN mintlify install
 
 EXPOSE 3001
 
+CMD ["mintlify", "install"]
+
 CMD ["mintlify", "dev"]
