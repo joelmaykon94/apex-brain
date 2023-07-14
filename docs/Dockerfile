@@ -10,7 +10,7 @@ COPY . /app
 
 
 RUN yarn \
-    && yarn build
+    && yarn build \
     && yarn global add mintlify
 
 
