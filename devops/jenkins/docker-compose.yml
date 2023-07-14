@@ -4,9 +4,15 @@ services:
     build: ./jenkins-master
     ports:
       - "50000:50000"
+    privileged: true
+    user: root
     volumes:
       - jenkins-log:/var/log/jenkins
       - jenkins-data:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+        - JENKINS_OPTS="--prefix=/tools/jenkins"
+        - JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
     networks:
       - jenkins-net
   nginx:
