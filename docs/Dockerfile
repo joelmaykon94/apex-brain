@@ -1,7 +1,8 @@
 #stage 1
 FROM node:19
-USER node
-COPY . /app
+
+COPY . .
+
 RUN yarn install
 
 RUN yarn global add mintlify
