@@ -1,9 +1,10 @@
 #stage 1
-FROM node:16.14.2-buster-slim as build
-
-WORKDIR /app
-
-COPY . /app
+FROM node:16.15-alpine
+USER node
+RUN mkdir -p /home/node/app
+WORKDIR /home/node/app
+COPY --chown=node . .
+RUN yarn install
 
 RUN yarn global add mintlify
 
