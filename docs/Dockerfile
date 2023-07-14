@@ -11,9 +11,10 @@ COPY . /app
 
 RUN yarn \
     && yarn build \
-    && yarn global add mintlify
+
+RUN yarn global add mintlify
 
 
-EXPOSE 3000
+EXPOSE 3001
 
 CMD ["mintlify dev"]
