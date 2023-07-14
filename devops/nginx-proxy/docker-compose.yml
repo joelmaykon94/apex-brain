@@ -10,7 +10,7 @@ services:
       - ./proxy.conf:/etc/nginx/conf.d/default.conf
       - ./index.html:/var/www/html/index.html
     links:
-      - jenkins:jenkins-server
+      - jenkins:jenkins
   jenkins:
     image: jenkins-master
     build:
