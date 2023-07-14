@@ -10,7 +10,7 @@ RUN yum -y install nginx-1.10.1
 RUN rm /etc/nginx/conf.d/default.conf
 
 # Add default configuration
-COPY conf/jenkins.conf /etc/nginx/conf.d/jenkins.conf
+COPY conf/proxy.conf /etc/nginx/conf.d/proxy.conf
 COPY conf/nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
