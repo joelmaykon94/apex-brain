@@ -4,9 +4,8 @@ USER node
 RUN mkdir -p /home/node/app
 WORKDIR /home/node/app
 COPY --chown=node . .
-RUN yarn install
 
-RUN yarn global add mintlify
+RUN npm i -g mintlify
 
 EXPOSE 3001
 
