@@ -93,8 +93,10 @@ terraform show
 ```
 
 ### Providers
+
+#### Provider Local
 - É o responsável para interagir com apis e criar os recursos
-- Inicialmente para aprendizado podemos utilizar o provider local onde temos no site da [HashiCorp Local Provider](https://registry.terraform.io/providers/hashicorp/local/latest)
+- Inicialmente podemos utilizar o provider local onde temos mais informações no site da [HashiCorp Local Provider](https://registry.terraform.io/providers/hashicorp/local/latest)
 ```bash .tf
 terraform {
   required_providers {
@@ -109,3 +111,6 @@ provider "local" {
   # Configuration options
 }
 ```
+
+#### Provider Random
+- Pode ser encontrado a implementação desse provider no meu [Github Terraform Ramdon]()
