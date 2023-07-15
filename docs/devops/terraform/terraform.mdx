@@ -42,49 +42,40 @@ sudo apt update && sudo apt install terraform
 
 ### Estágios do terraform
 
-#### Init
 - Esse comando executamos dentro da pasta onde está os arquivos `.tf` para baixar os providers e recursos declarados.
 
 ```bash ubuntu
 terraform init
 ```
 
-#### Validate
 - Para validar o código terraform usamos o seguinte comando.
 
 ```bash ubuntu
 terraform validate
 ```
 
-#### Plan
 - Para planejar nossa infraestrutura com os recursos que serão criados, modificados ou excluidos, usamos o comando abaixo.
 
 ```bash ubuntu
 terraform plan
 ```
-#### Apply
 - Para executar a criação dos recursos no provider (nuvem) que foi definido usamos o código abaixo.
 
 ```bash ubuntu
 terraform apply
 ```
 
-#### Destroy
 - Para deletar a infraestrutura basta executar o seguinte código.
 
 ```bash ubuntu
 terraform destroy
 ```
 
-#### Plan Destroy
-
 - Para planejar a exclusão da infraestrutura basta executar o seguinte código.
 
 ```bash ubuntu
 terraform plan destroy
 ```
-
-#### Show
 
 - Para mostrar os recursos da infraestrutura basta executar o seguinte código.
 
@@ -182,7 +173,7 @@ output "file_zip" {
   - Validar o multi.tf com `terraform validate`
   - Planejar a infraestrutura `terraform plan`
   - Criar o recurso com `terraform apply`
-  
+
 ```bash mult.tf
 terraform {
   required_providers {
@@ -213,5 +204,17 @@ output "file_zip" {
 
 output "random_string" {
   value = random_string.random.result
+}
+```
+
+#### Provisioners
+
+- Podemos usar os provisioners para executar comando local ou na nuvem
+
+```bash provisioner.tf
+resource "null_resource" "bash" {
+  provisioner "local-exec" {
+    command = "echo testing provisioner terraform!"
+  }
 }
 ```
