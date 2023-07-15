@@ -96,7 +96,7 @@ terraform show
 
 #### Provider Local
 - É o responsável para interagir com apis e criar os recursos
-- Inicialmente podemos utilizar o provider local onde temos mais informações no site da [HashiCorp Local Provider](https://registry.terraform.io/providers/hashicorp/local/latest)
+- Podemos utilizar o provider local onde temos mais informações no site da [HashiCorp Local Provider](https://registry.terraform.io/providers/hashicorp/local/latest)
 ```bash .tf
 terraform {
   required_providers {
@@ -135,4 +135,31 @@ resource "random_string" "random" {
 ```
 - Para planejar o recurso definido executamos `terraform plan`
 - Criamos com o comando `terraform apply` e digitamos `yes` para confirmar a criação do recurso.
+- Para visualizar os recursos criados podemos usar `terraform show`
 - Para destruir, primeiro validamos com o `terraform validate` e depois usamos o `terraform destroy`
+
+#### Provider Archive File
+- Outro provider interessante é o Archive File que pode ser usado para compactar arquivos.
+- O caso de uso abaixo realiza essa tarefa de compactar um arquivo, o projeto esta em [Github Archive Terraform]()
+- Usamos os passo para executar esse provider:
+  - Iniciar com o comando `terraform init`
+  - Validar o archive.tf com `terraform validate`
+  - Planejar a infraestrutura `terraform plan`
+  - Criar o recurso e executar a compactação com `terraform apply`
+
+```bash archive.tf
+terraform {
+  required_providers {
+    archive = {
+      source = "hashicorp/archive"
+      version = "2.4.0"
+    }
+  }
+}
+
+data "archive_file" "file_zip" {
+  type = "zip"
+  source_file = "data_backup/data.txt"
+  output_path = "backup.zip"
+}
+```
