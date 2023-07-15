@@ -1,16 +1,14 @@
 #stage 1
 FROM node:19
 
-COPY . .
+WORKDIR /app
 
-RUN yarn install
+COPY . .
 
 RUN yarn global add mintlify
 
-RUN mintlify install
+#RUN mintlify install
 
 EXPOSE 3001
 
-CMD ["mintlify", "install"]
-
-CMD ["mintlify", "dev"]
+ENTRYPOINT ["sh", "-c", "mintlify install && mintlify dev"]
