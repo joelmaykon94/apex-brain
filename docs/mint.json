@@ -2,10 +2,10 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Apex Brain",
   "logo": {
-    "dark": "/logo/brain.png",
-    "light": "/logo/brain-light.png"
+    "dark": "/mintlify/logo/brain.png",
+    "light": "/mintlify/logo/brain-light.png"
   },
-  "favicon": "/favicon.png",
+  "favicon": "/mintlify/favicon.png",
   "colors": {
     "primary": "#12A7D3",
     "light": "#81D7F7",
@@ -23,30 +23,34 @@
   },
   "tabs": [
     {
-      "name": "API Reference",
-      "url": "api-reference"
+      "name": "Exemplo Doc API",
+      "url": "/mintlify/api-reference"
     }
   ],
   "navigation": [
     {
+      "group": "Aprendendo DevOps",
+      "pages": ["/devops/devops", "/devops/terraform/terraform", "/devops/azure/terraform-no-azure"]
+    },
+    {
       "group": "Get Started",
-      "pages": ["introduction", "quickstart", "development"]
+      "pages": ["/mintlify/introduction", "/mintlify/quickstart", "/mintlify/development"]
     },
     {
       "group": "Essentials",
-      "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
+      "pages": ["/mintlify/essentials/markdown", "/mintlify/essentials/code", "/mintlify/essentials/images", "/mintlify/essentials/settings", "/mintlify/essentials/navigation"]
     },
     {
       "group": "API Documentation",
-      "pages": ["api-reference/authentication"]
+      "pages": ["/mintlify/api-reference/authentication"]
     },
     {
       "group": "Endpoint Examples",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "/mintlify/api-reference/endpoint/get",
+        "/mintlify/api-reference/endpoint/create",
+        "/mintlify/api-reference/endpoint/update",
+        "/mintlify/api-reference/endpoint/delete"
       ]
     }
   ],
@@ -55,5 +59,5 @@
     "github": "https://github.com/mintlify",
     "linkedin": "https://www.linkedin.com/company/mintsearch"
   },
-  "backgroundImage": "/background.png"
+  "backgroundImage": "background.png"
 }

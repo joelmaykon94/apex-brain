@@ -1,0 +1,111 @@
+---
+title: 'Terraform'
+description: 'Infraestrutura como código'
+---
+
+<Info>
+  **Pre-requisito** Conhecimento em Cloud, IAAS e Desenvolvimento de Software.
+</Info>
+
+<sub>Joel Maykon, criado em 15 de julho 2023</sub>
+
+### Terraform
+É uma ferramenta declarativa que serve para provisionar recursos de infraestrutura independente da nuvem que estiver utilizando.
+Ele constroi, modifica ou remove os recursos da nuvem, porém ele não gerencia a infraestrutura, podemos usar o ansible por exemplo para
+fazer o gerenciamento com base na configuração de infraestrutura definida no terraform. Essa tecnologia foi escrita usando a linguagem Go.
+
+### Componentes do Terraform
+- Core: Possui as configurações iniciais e o estado da infraestrutura. Ao executar `terraform plan` é feita uma comparação no estado da
+infraestrutura e se houver alguma mudança, os recursos são modificados conforme a definição nas configurações.
+- Providers: Definições conforme cada serviço de nuvem, podendo ter diferenças entre ambientes de nuvem.
+- Terraform Exec: Software escrito em Go que recebe os comandos para executar o provisionamento dos recursos.
+- File.tf ou var.tfvars: Os arquivos terraform possuem a extensão `.tf` ou `.tfvas` que pode ser um único arquivo ou separado em varios arquivos. Exemplos: main.tf,
+resources.tf e var.tfvars.
+- Plugins: Serve para interagir com os providers e outros tipos de ações que podemos fazer na nossa infraestrutura.
+- State: Há um arquivo chamado terraform.state, onde fica os estados da infraestrutura.
+
+### Instalação do Terraform no Linux
+ - Podemos usar a documentação do site [HashiCorp Install Terraform](https://developer.hashicorp.com/terraform/downloads) e escolher o sistema operacional que estamos usando.
+
+<CodeGroup>
+```bash macOS
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
+```
+
+```bash Ubuntu/Debian
+wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install terraform
+```
+</CodeGroup>
+
+### Estágios do terraform
+
+#### Init
+- Esse comando executamos dentro da pasta onde está os arquivos `.tf` para baixar os providers e recursos declarados.
+
+```bash ubuntu
+terraform init
+```
+
+#### Validate
+- Para validar o código terraform usamos o seguinte comando.
+
+```bash ubuntu
+terraform validate
+```
+
+#### Plan
+- Para planejar nossa infraestrutura com os recursos que serão criados, modificados ou excluidos, usamos o comando abaixo.
+
+```bash ubuntu
+terraform plan
+```
+#### Apply
+- Para executar a criação dos recursos no provider (nuvem) que foi definido usamos o código abaixo.
+
+```bash ubuntu
+terraform apply
+```
+
+#### Destroy
+- Para deletar a infraestrutura basta executar o seguinte código.
+
+```bash ubuntu
+terraform destroy
+```
+
+#### Plan Destroy
+
+- Para planejar a exclusão da infraestrutura basta executar o seguinte código.
+
+```bash ubuntu
+terraform plan destroy
+```
+
+#### Show
+
+- Para mostrar os recursos da infraestrutura basta executar o seguinte código.
+
+```bash ubuntu
+terraform show
+```
+
+### Providers
+- É o responsável para interagir com apis e criar os recursos
+- Inicialmente para aprendizado podemos utilizar o provider local onde temos no site da [HashiCorp Local Provider](https://registry.terraform.io/providers/hashicorp/local/latest)
+```bash .tf
+terraform {
+  required_providers {
+    local = {
+      source = "hashcorp/local"
+      version = "2.0.0"
+    }
+  }
+}
+
+provider "local" {
+  # Configuration options
+}
+```
