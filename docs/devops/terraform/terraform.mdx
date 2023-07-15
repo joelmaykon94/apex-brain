@@ -113,5 +113,26 @@ provider "local" {
 ```
 
 #### Provider Random
-- Pode ser encontrado a implementação desse provider no meu [Github Terraform Ramdon](https://github.com/joelmaykonTADS/apex-brain/tree/main/devops/terraform/random)
-- Primeiro executar o comando `terraform init` para baixar o provider
+- Pode ser encontrado a implementação completa desse provider no meu [Github Terraform Ramdon](https://github.com/joelmaykonTADS/apex-brain/tree/main/devops/terraform/random)
+
+- Executamos o comando `terraform init` para baixar o provider.
+```bash random.tf
+terraform {
+  required_providers {
+    random = {
+      source = "hashicorp/random"
+      version = "3.5.1"
+    }
+  }
+}
+```
+- Para validar o primeiro recursos e validar com `terraform validate`
+
+```bash random.tf
+resource "random_string" "random" {
+  length = 8
+}
+```
+- Para planejar o recurso definido executamos `terraform plan`
+- Criamos com o comando `terraform apply` e digitamos `yes` para confirmar a criação do recurso.
+- Para destruir, primeiro validamos com o `terraform validate` e depois usamos o `terraform destroy`

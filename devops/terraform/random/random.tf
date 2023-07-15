@@ -7,6 +7,6 @@ terraform {
   }
 }
 
-provider "random" {
-  # Configuration options
+resource "random_string" "random" {
+  length = 8
 }
