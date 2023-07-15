@@ -176,12 +176,13 @@ output "file_zip" {
 
 #### Multíplos providers
 
-- Podemos ter varios providers num mesmo terraform, veja o projeto []
+- Podemos ter varios providers num mesmo terraform, veja o projeto [Github Multi Providers](https://github.com/joelmaykonTADS/apex-brain/tree/main/devops/terraform/mult_provider)
 - Seguindo os comandos:
   - Iniciar com o comando `terraform init`
   - Validar o multi.tf com `terraform validate`
   - Planejar a infraestrutura `terraform plan`
   - Criar o recurso com `terraform apply`
+  
 ```bash mult.tf
 terraform {
   required_providers {
@@ -199,11 +200,11 @@ terraform {
 resource "random_string" "random" {
   length = 8
 }
-
+# output path this is random string
 data "archive_file" "file_zip" {
   type = "zip"
   source_file = "data_backup/data.txt"
-  output_path = "backup.zip"
+  output_path = "${random_string.random.result}.zip"
 }
 
 output "file_zip" {

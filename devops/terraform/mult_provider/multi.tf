@@ -12,13 +12,13 @@ terraform {
 }
 
 resource "random_string" "random" {
-  length = 8
+  length = 14
 }
 
 data "archive_file" "file_zip" {
   type = "zip"
   source_file = "data_backup/data.txt"
-  output_path = "backup.zip"
+  output_path = "${random_string.random.result}.zip"
 }
 
 output "file_zip" {
