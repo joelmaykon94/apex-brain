@@ -218,3 +218,85 @@ resource "null_resource" "bash" {
   }
 }
 ```
+#### Variáveis no terraform
+
+- Criando uma variável
+```bash .tfvars
+variable "sizeStorage" {
+  type = string
+  default = "S1"
+  description = "Tamanho do Storage"
+}
+```
+
+- Exemplo do uso
+```bash main.tf
+provider "azurerm" {
+  features {
+    
+  }
+}
+
+variable "location" {
+  type = string
+  description = "Locale to resources of Azure."
+  default = brazilsouth
+}
+
+resource "azurerm_resource_group" "apex_group" {
+  name     = "apex"
+  location = var.location
+  tags = var.tags
+}
+```
+- Variáveis do tipo Map para multiplas tags
+
+```bash tags.tf
+variable "tags" {
+  type = map
+  description = "Tags of resources and services azure"
+  default = {
+    environment = "dev"
+    manager = "Joel Maykon"
+  }
+}
+```
+
+- Variáveis do tipo List, criando uma Virtual Network
+```bash main.tf
+variable "vnet_address" {
+  type = list
+  default = ["10.0.0.0/16", "192.168.0.0/16"]
+}
+
+resource "azurerm_virtual_network" "vnet" {
+  name = "vnet-terraform"
+  resource_group_name = "${azurerm_resource_group.apex_group.name}"
+  location = var.location
+  address_space = var.vnet_address
+}
+```
+
+- Criando outputs para mostrar informações da infraestrutura
+
+```bash main.tf
+output "vnet_name" {
+  value = "${azurerm_virtual_network.vnet.name}"
+}
+```
+
+- Usando arquivo .tfvars  `terraform plan -var-file="variables.tfvars"` e o `terraform apply -var-file="variables.tfvars"`
+para utilizar as variáveis do arquivo.
+```bash variables.tfvars
+location = "westus"
+name-rg = "apex-dev"
+```
+- passando o nome da variável por linha de comando por exemplo: `terraform plan -var "location=westus"`
+- Podemos usar o merge para unir
+```bash main.tf
+resource "azurerm_resource_group" "apex_group" {
+  name     = var.name-rg
+  location = var.location
+  tags     = merge(var.tags, { version = "v2.1" })
+}
+```
