@@ -76,3 +76,28 @@ resource "azurerm_resource_group" "apex_group" {
   location = "West Europe"
 }
 ```
+
+### Azure Blob Storage
+- Um blob é um objeto binário grande e uma opção de armazenamento para qualquer tipo de dados que você queira
+armazenar em formato binário. 
+
+- Usando o Azure Blob Storage para salvar o estado do terraform backend
+```bash main.tf
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "terraformstate"
+    storage_account_name = "tfstate_apex"
+    container_name       = "terraformstate"
+    key                  = "<token storage blob>"
+  }
+}
+
+provider "azurerm" {
+  features {}
+}
+
+resource "azurerm_resource_group" "res_group_state" {
+  name = "res_group_terraform"
+  location = "westus"
+}
+```
