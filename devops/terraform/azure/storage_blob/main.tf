@@ -47,10 +47,10 @@ output "blobstorage_apex_name" {
 
 output "blobstorageapex-primary-access-key" {
   value = azurerm_storage_account.storage_apex_tf.primary_access_key
-  sensitive = true
+  #sensitive = true
 }
 
 output "blobstorage-apex-secondary-access-key" {
   value = azurerm_storage_account.storage_apex_tf.secondary_access_key
-  sensitive = true
+  #sensitive = true
 }
