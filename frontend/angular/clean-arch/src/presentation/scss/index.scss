@@ -1,3 +1,35 @@
-body {
-  background: rgb(86, 124, 246);
+/* styles.scss */
+
+.sidenav-container {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  height: calc(
+    100% - 64px
+  ); /* Adjust the height based on your toolbar's height */
+}
+
+$bgColor_light: white;
+$bgColor_dark: black;
+
+$textColor_light: black;
+$textColor_dark: white;
+
+$borderColor_light: black;
+$borderColor_dark: white;
+
+// mixin that enables css variables in light mode
+@mixin lighten() {
+  --bgColor: #{$bgColor_light};
+  --textColor: #{$textColor_light};
+  --borderColor: #{$borderColor_light};
+}
+
+// mixin that enables css variables in dark mode
+@mixin darken() {
+  --bgColor: #{$bgColor_dark};
+  --textColor: #{$textColor_dark};
+  --borderColor: #{$borderColor_dark};
 }
