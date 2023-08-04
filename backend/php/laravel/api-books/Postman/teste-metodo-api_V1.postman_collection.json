@@ -1,0 +1,224 @@
+{
+	"info": {
+		"name": "Livros Github",
+		"_postman_id": "10bcfaf4-4d42-4774-b1a8-d03584f2d055",
+		"description": "Metodos de acesso a api Livros ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8000/api/teste-metodo-api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8000/api/teste-metodo-api",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"teste-metodo-api"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/api/post-teste-retorna-dados-form",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nome",
+							"value": "Joel",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/post-teste-retorna-dados-form",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"post-teste-retorna-dados-form"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/api/cadastrar-usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "victor",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "victor@email.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "123456",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/cadastrar-usuario",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cadastrar-usuario"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/api/usuario",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjcwM2NkZjIzMjhmMzIwZjNlNDExNTQyNTBmM2I2ZDM5MTJmYTYxMjc2NTU1Yjc2ZTYxOTc4NjhlYjdiZjAyOTYwZjM3ZDdkYWNkZDYxMTdjIn0.eyJhdWQiOiIxIiwianRpIjoiNzAzY2RmMjMyOGYzMjBmM2U0MTE1NDI1MGYzYjZkMzkxMmZhNjEyNzY1NTViNzZlNjE5Nzg2OGViN2JmMDI5NjBmMzdkN2RhY2RkNjExN2MiLCJpYXQiOjE1NjI1MDg4OTIsIm5iZiI6MTU2MjUwODg5MiwiZXhwIjoxNTk0MTMxMjkyLCJzdWIiOiI4Iiwic2NvcGVzIjpbXX0.OIPEunPVx0D9JF_N-vJB2xWd58qKjdGRmnKtDxj0KQfqST63Igt2zocAaMNEcKA7rFzDO8AYqDHjRavNB2GpD4Hx_K1m6kRaDpxbSlZkivqAw7-gQkARouyYC-cmX6LY-6EV03zpNmA70HyCM9kOOLXbPRoqIX5fOFKYR0iHvClS4JkyWkjemYguESddXY-6d3XaayJ4V1f3twOVhHJl_GJEnlhyHaoVPdr6--dpXNDn92bVRTRq8uctXyVj8Hcp-KAhvAikOFgcse9ZqJGPqzQfylEjGvHm5qRBmC4xgvRWfh_dvdxvyYowQ8rM9hDqfT5f59ZIJX7yvVKYrGgzzWCEnyN975ghc0DlHH1wZtHwC8dDZMPrunKuqdMmmyRLJAK7l4uwpaLaVM7r9IuYImWuBokLmGaZKHFU84bt5su6QCHlS6IuzrT7nsapKhROh6qP8mwoiHYJS9FRnyH70BgKNhxQIldrF1p22ywPVBlc8eZ9blH04JBrQUOaqLhz612t_MZqSM5DDTzAH9MLhBlqtdP4WBqLFicfr8zvwHVBJwj-K4oKVwQvGMpIdW7omAZAeeZBeXwVjqB4oOuSji5-2ZuGdwXhbaPRlQFrGL-rOg2BgbpjQdjqMBxMKbokp1mJof4y8Ar50emsPvpRa7c-BUnpMEDQ8KRdjkZwx-w"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "localhost:8000/api/usuario",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"usuario"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/api/login-usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "victor@email.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/login-usuario",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login-usuario"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/criar/livro",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImMxYWQ5MjY1ZDVlYzQzNTA0ZTk5MDNjNTU4MDdjZWZlNmYyNDUwM2JmODBhYWZjNjMwMzQwNDMxOGQ1Zjc1NDhiZDIxOTk3MTM4MDUyMGYwIn0.eyJhdWQiOiIxIiwianRpIjoiYzFhZDkyNjVkNWVjNDM1MDRlOTkwM2M1NTgwN2NlZmU2ZjI0NTAzYmY4MGFhZmM2MzAzNDA0MzE4ZDVmNzU0OGJkMjE5OTcxMzgwNTIwZjAiLCJpYXQiOjE1NjI1NTI5MTAsIm5iZiI6MTU2MjU1MjkxMCwiZXhwIjoxNTk0MTc1MzEwLCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.Rat5OpXqu7DgBMf12ods49v8ufoKkCv8Nz_4wYVejaJxs3VkXozgx9fmF1SDBdEo596DHpOwu4p0P4_r4uBj2NKKgrwzklKJUjVTOnsX5gQGxcZRsKsyF4HeMhe08cCogj_X-6cJcY1KbvpkwU1ww5cwyBkT2BPta9wKsz8gWiHoY2W_fjtRgMPVJkfjDgV2xzWzX84FdSsTYvKfLapZZDBRQTiwkqb9dQRpMJYoIdoW1f9SqljtxpOtOW5y6UaD6Ugn7Cgtj7aKk5YAuwd1gxGuuEYLj6gjFlMWgSyxSF10Nm3YxsKdQv8dXvo-eID5SCeAlpenLYoVYuoYxu3NsnIoc_b-ifsl5kLSK6QInGlj9EXCXn3nPmD56QnJD1MlYFhPAnw4jROEuuSw_8gs_sn4ytUF76UsiW1_m4xZL4wwc7dTxtuRKbtYoeM2z2NBm20FPK3GOOk8M0xCmkTQ-qkJn6IyQWXhiknku6cqy5Nnqh1iZiikHOzHlNjFv__EWoz6CweNmnMpRWZcWA3tZw0YcpyPcKfdsSysLsdkPykTXtp_nMqoYDuT0PjX7qofJb_mfJMzyCQIWDjfPakGSNMTM_uXuULFPMnMJac1Jpf1cfxtnerltLb4S5HaVh_89xyY-s3yto0bCf460NVGSSb9is1Oyw_G4p_fG_gDb2g"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "texto",
+							"value": "Livro PHP Ninja",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "imagem",
+							"value": "imagem3.jpg",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "link",
+							"value": "www.php.com",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/criar/livro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"criar",
+						"livro"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

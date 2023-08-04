@@ -1,0 +1,25 @@
+{
+  "name": "@dev-grupoa/root",
+  "version": "1.0.0",
+  "description": "This file is necessary to deploy app service at cloud heroku ",
+  "main": "index.js",
+  "scripts": {
+    "web": "pnpm run serve --filter @dev-grupoa/web",
+    "test:web": "pnpm run test:unit --filter @dev-grupoa/web",
+    "test:e2e": "pnpm run test:e2e --filter @dev-grupoa/web"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "mocha": "^8.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
