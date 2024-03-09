@@ -23,7 +23,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
-        <img src="https://media.licdn.com/dms/image/D4D03AQGzebhXD1HT5w/profile-displayphoto-shrink_800_800/0/1687971502759?e=2147483647&v=beta&t=W8by9n06w31RpQ2_G0RNzwDOUxmSaL25btgJB8L_HQE" width={"250px"} alt="..." className="shadow rounded-full items-center border-none " />
+        <img src="https://media.licdn.com/dms/image/D4D03AQGn0kQIVBMWiQ/profile-displayphoto-shrink_200_200/0/1698333246449?e=1715212800&v=beta&t=1tcPacRH8kZfRNvYpRngcB9we1spynUmTwH7YJcOIaM" width={"250px"} alt="..." className="shadow rounded-full items-center border-none " />
       </div>
     </section>
   )
