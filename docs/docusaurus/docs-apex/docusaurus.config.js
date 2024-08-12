@@ -40,7 +40,7 @@ const config = {
         path: 'en',
       },
       pt: {
-        label: 'PortiguÊs',
+        label: 'Português',
         direction: 'ltr',
         htmlLang: 'pt-BR',
         calendar: 'gregory',

@@ -81,7 +81,7 @@ const Contact = () => {
             <h4><b>Linkedin: </b> <a href="https://www.linkedin.com/in/joelmaykon/"><u>in/joelmaykon</u></a></h4>
           </span>
 
-          <img src="https://media.licdn.com/dms/image/D4D03AQGzebhXD1HT5w/profile-displayphoto-shrink_800_800/0/1687971502759?e=2147483647&v=beta&t=W8by9n06w31RpQ2_G0RNzwDOUxmSaL25btgJB8L_HQE" width={"250px"} alt="..." className="pt-5 shadow rounded-full items-center border-none " />
+          <img src="https://media.licdn.com/dms/image/v2/D4D03AQFa-cpWzrWG9g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1713350518513?e=1729123200&v=beta&t=A_qgWxKvivR_gNWTotArt9WDcf-3vipZKvqqQxbSqUI" width={"250px"} alt="..." className="pt-5 shadow rounded-full items-center border-none " />
         </div>
       </motion.div>
 
